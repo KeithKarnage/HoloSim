@@ -1772,7 +1772,8 @@ Game.prototype = {
 
     loadLevel: function() {
         var self = this;
-        self.bgB2 = drawBG(["Sky","Night","Grid"][flr(Math.random()*3)]);
+        if(!server)
+            self.bgB2 = drawBG(["Sky","Night","Grid"][flr(Math.random()*3)]);
         self.bgCh = true;
 
         //  COUNT DOWN UNTIL START
