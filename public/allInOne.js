@@ -2103,7 +2103,7 @@ Game.prototype = {
 
     update: function(game, timestep) {
         // if(game.matchEnded)
-        if(game.bgCh)
+        if(!server && game.bgCh)
             game.changeBackground();
         //  UPDATE LEVEL PIECES
         for(var i=0,iL=game.level.length; i<iL; i++)
