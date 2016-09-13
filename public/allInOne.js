@@ -1889,7 +1889,8 @@ Game.prototype = {
 
                 lvl.type = ["Hidey","Broken","Actor"][flr(Math.random()*3)];
                 lvl.style = ["grid","dirt"][flr(Math.random()*2)];
-                lvl.img = this.assets[lvl.style].canvas;
+                if(!server)
+                    lvl.img = this.assets[lvl.style].canvas;
 
                 if(server) {
                     // console.log(this.players)
