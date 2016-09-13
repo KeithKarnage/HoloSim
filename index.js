@@ -18,7 +18,15 @@ function createSandbox() {
     return sandbox;
 };
 
-require('fs').readFile('./public/shared.js', 'utf8', function (err, shared) {
+//  REMOVE LATER
+// require('fs').readFile('./public/utils.js', 'utf8', function (err, utils) {
+// require('fs').readFile('./public/jsfxr.js', 'utf8', function (err, jsfxr) {
+// require('fs').readFile('./public/astar.js', 'utf8', function (err, astar) {
+// require('fs').readFile('./public/classes.js', 'utf8', function (err, classes) {
+    
+// require('fs').readFile('./public/shared.js', 'utf8', function (err, shared) {
+require('fs').readFile('./public/allInOne.js', 'utf8', function (err, allInOne) {
+
     require('fs').readFile('./public/server.js', 'utf8', function (err, code) {
         if (err) {
             return console.log(err);
@@ -30,7 +38,16 @@ require('fs').readFile('./public/shared.js', 'utf8', function (err, shared) {
             io = require("socket.io")(server),
             sandbox = createSandbox();
 
-        require('vm').runInNewContext(shared + "\n" + code, sandbox);
+        require('vm').runInNewContext(
+                                        //  REMOVE LATER
+                                        // utils + "\n" +
+                                        // jsfxr + "\n" +
+                                        // astar + "\n" +
+                                        // classes + "\n" +
+
+                                        // shared + "\n" + code, sandbox);
+                                        allInOne + "\n" + code, sandbox);
+
         io.on('connection', sandbox.module.exports);
         app.set('port', (process.env.PORT || 3000));
         app.use(express.static('public'));
@@ -39,3 +56,8 @@ require('fs').readFile('./public/shared.js', 'utf8', function (err, shared) {
         });
     });
 });
+//  REMOVE LATER
+// });
+// });
+// });
+// });

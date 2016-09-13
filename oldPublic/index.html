@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<meta name "viewport" content="width=device-width, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="apple-touch-fullscreen" content="yes"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-statur-bar-style" content="black"/>
+<html lang="en">
+
+<head>
+<title>HoloSim</title>
+
+<meta charset="UTF-8">
+</head>
+<style>
+	#cover {
+		font: 60px impact, charcoal, sans-serif;
+	}
+	button {
+		/*font: 20px impact;*/
+		font-size: 20px;
+		width: 200px;
+		margin: 40px auto;
+		display: block;
+
+	}
+	h1 {
+		/*font-size: 80px;*/
+		width: 435px;
+		margin: 100px auto 50px;
+		color: rgba(200,200,200,0.8);
+		letter-spacing: 4px
+	}
+	
+</style>
+<body style="margin: 0px">
+
+<div id="cover">
+	<h1>HoloSim</h1>
+	<button>Single Player</button>
+	<button>Mulitplayer</button>
+</div>
+
+
+<script >
+var online = false;
+if(document.location.host !== "") {
+	document.write('\<script type="text/javascript" src="/socket.io/socket.io.js"\>\</script\>');
+	online = true;
+}
+</script>
+<!-- <div id="online"> -->
+<!-- <script src="/socket.io/socket.io.js"></script> -->
+<!-- </div> -->
+<script src="utils.js"></script>
+<script src="jsfxr.js"></script>
+<!-- <script src="astar.js"></script> -->
+<script src="classes.js"></script>
+<script src="shared.js"></script>
+<script src="client.js"></script>
+
+<!-- <script src="allInOne.js"></script> -->
+
+</body>
+</html>
